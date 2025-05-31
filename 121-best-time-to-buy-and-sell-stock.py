@@ -1,15 +1,12 @@
-class Solution: # solution by Magesh
+class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        left = 0  # Buy
-        right = 1  # Sell
-        max_profit = 0
-        
-        while right < len(prices):
-            current_profit = prices[right] - prices[left]
-            if prices[left] < prices[right]:
-                max_profit = max(current_profit, max_profit)
-            else:
-                left = right
-            right += 1
+        p=0
+        min=100000
 
-        return max_profit
+        for i in range(len(prices)):
+            if prices[i]<min:
+                min=prices[i]
+            elif prices[i]>min and prices[i]-min>p:
+                p=prices[i]-min
+        
+        return p
