@@ -1,4 +1,4 @@
-class Solution:
+class Solution: # solution by Francisco Restrepo
     def canJump(self, nums: List[int]) -> bool:
         gas = 0
         for n in nums:
